@@ -1,0 +1,107 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+}
+
+
+<div class="card bg-white dark:bg-zink-700 shadow-md rounded-md mb-6">
+    <div class="card-header border-b border-slate-200 dark:border-zink-500 p-4">
+        <h5 class="text-lg font-semibold text-gray-800 dark:text-zink-100">Statement Details Configuration</h5>
+    </div>
+    <div class="card-body p-4">
+        <form>
+            <div class="grid grid-cols-1 gap-6">
+                <!-- Final Notice -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Final Notice</label>
+                    <div id="finalNoticeEditor" class="ckeditor-inline ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline ck-blurred" lang="en" dir="ltr" role="textbox" aria-label="Rich Text Editor. Editing area: main" contenteditable="true">
+                        <p>This is the default content for the <strong>Final Notice</strong> section. Please customize as needed.</p>
+                        <ul>
+                            <li>Outstanding balance must be settled within 7 days.</li>
+                            <li>Failure to comply may result in further action.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Allocation of Payment -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Allocation of Payment</label>
+                    <div id="allocationOfPaymentEditor" class="ckeditor-inline ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline ck-blurred" lang="en" dir="ltr" role="textbox" aria-label="Rich Text Editor. Editing area: main" contenteditable="true">
+                        <p>Payments are allocated in the following order:</p>
+                        <ol>
+                            <li>Interest</li>
+                            <li>Fees</li>
+                            <li>Principal</li>
+                        </ol>
+                        <p>For any queries regarding payment allocation, please contact our finance department.</p>
+                    </div>
+                </div>
+
+                <!-- Deposits -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Deposits</label>
+                    <div id="depositsEditor" class="ckeditor-inline ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline ck-blurred" lang="en" dir="ltr" role="textbox" aria-label="Rich Text Editor. Editing area: main" contenteditable="true">
+                        <p>All deposits received will be reflected on your statement within 3 business days.</p>
+                        <p>Please ensure your reference number is correctly provided for prompt processing.</p>
+                    </div>
+                </div>
+
+                <!-- Cheque Payment -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Cheque Payment</label>
+                    <div id="chequePaymentEditor" class="ckeditor-inline ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline ck-blurred" lang="en" dir="ltr" role="textbox" aria-label="Rich Text Editor. Editing area: main" contenteditable="true">
+                        <p>Cheque payments are subject to a clearance period of 7-10 business days.</p>
+                        <p>Do not send post-dated cheques. Only current dated cheques will be processed.</p>
+                    </div>
+                </div>
+
+                <!-- Interests -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Interests</label>
+                    <div id="interestsEditor" class="ckeditor-inline ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline ck-blurred" lang="en" dir="ltr" role="textbox" aria-label="Rich Text Editor. Editing area: main" contenteditable="true">
+                        <p>Interest is calculated daily on the outstanding balance and applied monthly.</p>
+                        <p>Current interest rate: <strong>1.5% per month</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Payment Method -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Payment Method</label>
+                    <div id="paymentMethodEditor" class="ckeditor-inline ck ck-content ck-editor__editable ck-rounded-corners ck-editor__editable_inline ck-blurred" lang="en" dir="ltr" role="textbox" aria-label="Rich Text Editor. Editing area: main" contenteditable="true">
+                        <p>Payments can be made via:</p>
+                        <ul>
+                            <li>EFT (Electronic Funds Transfer)</li>
+                            <li>Direct Deposit at any major bank</li>
+                            <li>Online payment portal (available at youraccount.example.com)</li>
+                        </ul>
+                        <p>Please use your account number as the payment reference.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Actions (Optional, but good practice for a form) -->
+            <div class="flex justify-end gap-2 mt-6">
+                <button type="button"
+                        class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-zink-400 rounded-md
+                                       font-semibold text-gray-700 dark:text-zink-200 bg-white dark:bg-zink-600
+                                       hover:bg-gray-50 dark:hover:bg-zink-500
+                                       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400
+                                       transition-all duration-150 ease-in-out">
+                    Cancel
+                </button>
+                <button type="submit"
+                        class="inline-flex items-center px-4 py-2 border border-transparent rounded-md
+                                       font-semibold text-white bg-custom-500 hover:bg-custom-600
+                                       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom-500
+                                       transition-all duration-150 ease-in-out">
+                    <i data-lucide="save" class="h-4 w-4 mr-2"></i> Save Settings
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="~/libs/ckeditor/ckeditor5-build-inline/build/ckeditor.js"></script>
+@* <script src="~/js/pages/form-editor-inline.init.js"></script> *@

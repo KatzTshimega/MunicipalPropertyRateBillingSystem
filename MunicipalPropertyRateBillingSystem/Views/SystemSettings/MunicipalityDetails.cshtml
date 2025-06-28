@@ -5,5 +5,304 @@
     Layout = "_Layout";
 }
 
-<h2 class="text-2xl font-semibold mb-6">Municipality Details</h2>
+
+<div class="card bg-white dark:bg-zink-700 shadow-md rounded-md mt-6">
+    <div class="card-header border-b border-slate-200 dark:border-zink-500 p-4">
+        <h5 class="text-lg font-semibold text-gray-800 dark:text-zink-100">Municipality Details</h5>
+    </div>
+    <div class="card-body p-4">
+        <form id="municipalityDetailsForm">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                <!-- Municipality Name -->
+                <div>
+                    <label for="municipalityName" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Municipality Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="municipalityName" name="municipalityName" required
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md
+                                          bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100
+                                          placeholder-gray-400 dark:placeholder-zink-400
+                                          focus:ring-custom-500 focus:border-custom-500
+                                          transition-all duration-150 ease-in-out"
+                           placeholder="Enter municipality name">
+                </div>
+                <!-- Registration Number -->
+                <div>
+                    <label for="registrationNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Registration Number</label>
+                    <input type="text" id="registrationNumber" name="registrationNumber"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md
+                                          bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100
+                                          placeholder-gray-400 dark:placeholder-zink-400
+                                          focus:ring-custom-500 focus:border-custom-500
+                                          transition-all duration-150 ease-in-out"
+                           placeholder="Enter registration number">
+                </div>
+                <!-- Phone Number -->
+                <div>
+                    <label for="phoneNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Phone Number</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" pattern="[0-9]+"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md
+                                          bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100
+                                          placeholder-gray-400 dark:placeholder-zink-400
+                                          focus:ring-custom-500 focus:border-custom-500
+                                          transition-all duration-150 ease-in-out"
+                           placeholder="e.g., 0123456789">
+                </div>
+                <!-- Email Address -->
+                <div>
+                    <label for="emailAddress" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Email Address</label>
+                    <input type="email" id="emailAddress" name="emailAddress"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md
+                                          bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100
+                                          placeholder-gray-400 dark:placeholder-zink-400
+                                          focus:ring-custom-500 focus:border-custom-500
+                                          transition-all duration-150 ease-in-out"
+                           placeholder="Enter email address">
+                </div>
+                <!-- Fax Number -->
+                <div>
+                    <label for="faxNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Fax Number</label>
+                    <input type="text" id="faxNumber" name="faxNumber" pattern="[0-9]+"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md
+                                          bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100
+                                          placeholder-gray-400 dark:placeholder-zink-400
+                                          focus:ring-custom-500 focus:border-custom-500
+                                          transition-all duration-150 ease-in-out"
+                           placeholder="e.g., 0123456789">
+                </div>
+                <!-- VAT -->
+                <div>
+                    <label for="vatNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">VAT Number</label>
+                    <input type="text" id="vatNumber" name="vatNumber"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md
+                                          bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100
+                                          placeholder-gray-400 dark:placeholder-zink-400
+                                          focus:ring-custom-500 focus:border-custom-500
+                                          transition-all duration-150 ease-in-out"
+                           placeholder="Enter VAT number">
+                </div>
+                <!-- Municipality Type -->
+                <div>
+                    <label for="municipalityType" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Municipality Type <span class="text-red-500">*</span></label>
+                    <select id="municipalityType" name="municipalityType" required
+                            class="form-select w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md
+                                           bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100
+                                           focus:ring-custom-500 focus:border-custom-500
+                                           transition-all duration-150 ease-in-out">
+                        <option value="">Select Type</option>
+                        <option value="metro">Metro Municipality</option>
+                        <option value="district">District Municipality</option>
+                        <option value="local">Local Municipality</option>
+                    </select>
+                </div>
+                <!-- Municipality Logo -->
+                <div>
+                    <label for="municipalityLogo" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Municipality Logo</label>
+                    <input type="file" id="municipalityLogo" name="municipalityLogo"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md
+                                          bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100
+                                          file:mr-4 file:py-2 file:px-4
+                                          file:rounded-md file:border-0 file:text-sm file:font-semibold
+                                          file:bg-custom-500 file:text-white
+                                          hover:file:bg-custom-600
+                                          focus:outline-none focus:ring-custom-500 focus:border-custom-500
+                                          transition-all duration-150 ease-in-out">
+                </div>
+                <!-- GPS Coordinates -->
+                <div class="col-span-1 md:col-span-2 lg:col-span-1">
+                    <label class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">GPS Coordinates</label>
+                    <div class="grid grid-cols-2 gap-2">
+                        <input type="text" id="gpsLatitude" name="gpsLatitude"
+                               class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md
+                                              bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100
+                                              placeholder-gray-400 dark:placeholder-zink-400
+                                              focus:ring-custom-500 focus:border-custom-500
+                                              transition-all duration-150 ease-in-out"
+                               placeholder="Latitude (e.g., -26.1952)">
+                        <input type="text" id="gpsLongitude" name="gpsLongitude"
+                               class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md
+                                              bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100
+                                              placeholder-gray-400 dark:placeholder-zink-400
+                                              focus:ring-custom-500 focus:border-custom-500
+                                              transition-all duration-150 ease-in-out"
+                               placeholder="Longitude (e.g., 28.0340)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Physical Address Section -->
+            <h6 class="text-md font-semibold text-gray-800 dark:text-zink-100 mb-3 border-b border-slate-200 dark:border-zink-500 pb-2">Physical Address</h6>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                <div>
+                    <label for="physicalAddress1" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 1</label>
+                    <input type="text" id="physicalAddress1" name="physicalAddress1"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="e.g., 123 Main Street">
+                </div>
+                <div>
+                    <label for="physicalAddress2" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 2</label>
+                    <input type="text" id="physicalAddress2" name="physicalAddress2"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="e.g., Building A, Floor 5">
+                </div>
+                <div>
+                    <label for="physicalAddress3" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 3</label>
+                    <input type="text" id="physicalAddress3" name="physicalAddress3"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="e.g., Suite 101">
+                </div>
+                <div>
+                    <label for="physicalSuburb" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Suburb/Township</label>
+                    <input type="text" id="physicalSuburb" name="physicalSuburb"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="Enter suburb/township">
+                </div>
+                <div>
+                    <label for="physicalCity" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">City</label>
+                    <input type="text" id="physicalCity" name="physicalCity"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="Enter city">
+                </div>
+                <div>
+                    <label for="physicalProvince" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Province</label>
+                    <input type="text" id="physicalProvince" name="physicalProvince"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="Enter province">
+                </div>
+                <div>
+                    <label for="physicalPostalCode" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Postal Code</label>
+                    <input type="text" id="physicalPostalCode" name="physicalPostalCode"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="Enter postal code">
+                </div>
+            </div>
+
+            <!-- Postal Address Section -->
+            <h6 class="text-md font-semibold text-gray-800 dark:text-zink-100 mb-3 border-b border-slate-200 dark:border-zink-500 pb-2">Postal Address</h6>
+            <div class="mb-4">
+                <input type="checkbox" id="sameAsPhysical" class="w-4 h-4 text-custom-600 bg-gray-100 border-gray-300 rounded focus:ring-custom-500 dark:focus:ring-custom-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-zink-600 dark:border-zink-500">
+                <label for="sameAsPhysical" class="ms-2 text-sm font-medium text-gray-700 dark:text-zink-200">Same As Physical Address</label>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6" id="postalAddressFields">
+                <div>
+                    <label for="postalAddress1" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 1</label>
+                    <input type="text" id="postalAddress1" name="postalAddress1"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="e.g., P.O. Box 123">
+                </div>
+                <div>
+                    <label for="postalAddress2" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 2</label>
+                    <input type="text" id="postalAddress2" name="postalAddress2"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="e.g., Private Bag X45">
+                </div>
+                <div>
+                    <label for="postalAddress3" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 3</label>
+                    <input type="text" id="postalAddress3" name="postalAddress3"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="e.g., Department of Finance">
+                </div>
+                <div>
+                    <label for="postalSuburb" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Suburb/Township</label>
+                    <input type="text" id="postalSuburb" name="postalSuburb"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="Enter suburb/township">
+                </div>
+                <div>
+                    <label for="postalCity" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">City</label>
+                    <input type="text" id="postalCity" name="postalCity"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="Enter city">
+                </div>
+                <div>
+                    <label for="postalProvince" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Province</label>
+                    <input type="text" id="postalProvince" name="postalProvince"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="Enter province">
+                </div>
+                <div>
+                    <label for="postalPostalCode" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Postal Code</label>
+                    <input type="text" id="postalPostalCode" name="postalPostalCode"
+                           class="form-input w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100 placeholder-gray-400 dark:placeholder-zink-400 focus:ring-custom-500 focus:border-custom-500 transition-all duration-150 ease-in-out"
+                           placeholder="Enter postal code">
+                </div>
+            </div>
+
+            <!-- Form Actions -->
+            <div class="flex justify-end gap-2">
+                <button type="button"
+                        class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-zink-400 rounded-md
+                                       font-semibold text-gray-700 dark:text-zink-200 bg-white dark:bg-zink-600
+                                       hover:bg-gray-50 dark:hover:bg-zink-500
+                                       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400
+                                       transition-all duration-150 ease-in-out">
+                    Cancel
+                </button>
+                <button type="submit"
+                        class="inline-flex items-center px-4 py-2 border border-transparent rounded-md
+                                       font-semibold text-white bg-custom-500 hover:bg-custom-600
+                                       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-custom-500
+                                       transition-all duration-150 ease-in-out">
+                    <i data-lucide="save" class="h-4 w-4 mr-2"></i> Submit
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- JavaScript for "Same As Physical Address" checkbox -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sameAsPhysicalCheckbox = document.getElementById('sameAsPhysical');
+        const physicalAddressFields = [
+            document.getElementById('physicalAddress1'),
+            document.getElementById('physicalAddress2'),
+            document.getElementById('physicalAddress3'),
+            document.getElementById('physicalSuburb'),
+            document.getElementById('physicalCity'),
+            document.getElementById('physicalProvince'),
+            document.getElementById('physicalPostalCode')
+        ];
+        const postalAddressFields = [
+            document.getElementById('postalAddress1'),
+            document.getElementById('postalAddress2'),
+            document.getElementById('postalAddress3'),
+            document.getElementById('postalSuburb'),
+            document.getElementById('postalCity'),
+            document.getElementById('postalProvince'),
+            document.getElementById('postalPostalCode')
+        ];
+
+        sameAsPhysicalCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                // Copy values from physical to postal
+                physicalAddressFields.forEach((field, index) => {
+                    if (postalAddressFields[index]) {
+                        postalAddressFields[index].value = field.value;
+                        postalAddressFields[index].setAttribute('readonly', true); // Make postal fields read-only
+                        postalAddressFields[index].classList.add('bg-gray-100', 'dark:bg-zink-700'); // Add disabled-like background
+                    }
+                });
+            } else {
+                // Clear postal fields and make them editable
+                postalAddressFields.forEach(field => {
+                    field.value = '';
+                    field.removeAttribute('readonly');
+                    field.classList.remove('bg-gray-100', 'dark:bg-zink-700'); // Remove disabled-like background
+                });
+            }
+        });
+
+        // Optional: If physical address fields change while checkbox is checked, update postal
+        physicalAddressFields.forEach((field, index) => {
+            field.addEventListener('input', function() {
+                if (sameAsPhysicalCheckbox.checked) {
+                    if (postalAddressFields[index]) {
+                        postalAddressFields[index].value = this.value;
+                    }
+                }
+            });
+        });
+    });
+
+
+</script>
 

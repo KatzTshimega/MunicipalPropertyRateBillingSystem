@@ -19,6 +19,11 @@ namespace MunicipalPropertyRateBillingSystem.Controllers
             return View();
         }
 
+        public IActionResult StatementSetup()
+        {
+            return View();
+        }
+
         public IActionResult ServiceChargeType()
         {
             return View();
