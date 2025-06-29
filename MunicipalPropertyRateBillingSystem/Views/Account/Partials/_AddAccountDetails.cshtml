@@ -1,0 +1,82 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="flex flex-col w-full h-full bg-white dark:bg-zink-600">
+    <form id="addAccountDetailsForm">
+        <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-zink-500">
+            <h5 class="text-16">Add Account Details</h5>
+            <button data-modal-close="AccountDetailsModal" type="button" class="transition-all duration-200 ease-linear text-slate-500 hover:text-red-500 dark:text-zink-200 dark:hover:text-red-500">
+                <i data-lucide="x" class="size-5"></i>
+            </button>
+        </div>
+        <div class="max-h-[calc(theme('height.screen')_-_180px)] p-4 overflow-y-auto">
+            <div class="p-4 rounded-lg bg-gray-50 dark:bg-zink-600 block" id="account-details-form-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div>
+                        <label for="erfNumberDropdown" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">ERF Number <span class="text-red-500">*</span></label>
+                        <select id="erfNumberDropdown" name="erfNumberDropdown" required
+                                class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                            <option value="">Select ERF Number</option>
+                            <option value="ERF001">ERF001 - 123 Main St</option>
+                            <option value="ERF002">ERF002 - 456 Oak Ave</option>
+                            <option value="ERF003">ERF003 - 789 Pine Ln</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="accountType" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Account Type <span class="text-red-500">*</span></label>
+                        <select id="accountType" name="accountType" required
+                                class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                            <option value="">Select Account Type</option>
+                            <option value="Residential">Residential</option>
+                            <option value="Commercial">Commercial</option>
+                            <option value="Industrial">Industrial</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="accountSubtype" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Account Sub-Type <span class="text-red-500">*</span></label>
+                        <select id="accountSubtype" name="accountSubtype" required
+                                class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                            <option value="">Select Account Sub-Type</option>
+                            <option value="Water">Water</option>
+                            <option value="Electricity">Electricity</option>
+                            <option value="Sewerage">Sewerage</option>
+                            <option value="Rates">Rates</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="depositDate" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Deposit Date</label>
+                        <input type="date" id="depositDate" name="depositDate"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+
+                    <div>
+                        <label for="depositAmount" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Deposit Amount</label>
+                        <input type="number" id="depositAmount" name="depositAmount" step="0.01"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+
+                    <div>
+                        <label for="guaranteeDate" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Guarantee Date</label>
+                        <input type="date" id="guaranteeDate" name="guaranteeDate"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+
+                    <div>
+                        <label for="guaranteeAmount" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Guarantee Amount</label>
+                        <input type="number" id="guaranteeAmount" name="guaranteeAmount" step="0.01"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center justify-end p-4 mt-auto border-t border-slate-200 dark:border-zink-500">
+            <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-zink-700">Add Account</button>
+        </div>
+    </form>
+</div>

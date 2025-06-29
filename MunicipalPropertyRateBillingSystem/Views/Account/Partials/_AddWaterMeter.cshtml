@@ -1,0 +1,95 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="flex flex-col w-full h-full bg-white dark:bg-zink-600">
+    <form id="addWaterMeterForm">
+        <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-zink-500">
+            <h5 class="text-16">Add Water Meter Reading</h5>
+            <button data-modal-close="WaterReadingsModal" type="button" class="transition-all duration-200 ease-linear text-slate-500 hover:text-red-500 dark:text-zink-200 dark:hover:text-red-500">
+                <i data-lucide="x" class="size-5"></i>
+            </button>
+        </div>
+        <div class="max-h-[calc(theme('height.screen')_-_180px)] p-4 overflow-y-auto">
+            <div class="p-4 rounded-lg bg-gray-50 dark:bg-zink-600 block" id="water-meter-form-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <div>
+                        <label for="waterServiceChargeType" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Service Charge Type <span class="text-red-500">*</span></label>
+                        <select id="waterServiceChargeType" name="waterServiceChargeType" required
+                                class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                            <option value="">Select Service Charge Type</option>
+                            <option value="WaterResidential">Water Residential Tariff</option>
+                            <option value="WaterCommercial">Water Commercial Tariff</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="waterAccountNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Account Number <span class="text-red-500">*</span></label>
+                        <select id="waterAccountNumber" name="waterAccountNumber" required
+                                class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                            <option value="">Select Account Number</option>
+                            <option value="ACC001-ERF001">ACC001 (ERF001)</option>
+                            <option value="ACC002-ERF002">ACC002 (ERF002)</option>
+                            <option value="ACC003-ERF001">ACC003 (ERF001)</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="waterMeterNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Meter Number <span class="text-red-500">*</span></label>
+                        <input type="text" id="waterMeterNumber" name="waterMeterNumber" required
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+
+                    <div>
+                        <label for="waterOpeningBalance" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Opening Balance</label>
+                        <input type="number" id="waterOpeningBalance" name="waterOpeningBalance" step="0.01" value="0.00"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+
+                    <div>
+                        <label for="waterClosingBalance" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Closing Balance (New Reading)</label>
+                        <input type="number" id="waterClosingBalance" name="waterClosingBalance" step="0.01" value="0.00"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+
+                    <div>
+                        <label for="waterConsumedUnits" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Consumed Units</label>
+                        <input type="text" id="waterConsumedUnits" name="waterConsumedUnits" readonly value="0.00"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm bg-slate-100 dark:bg-zink-800 text-gray-700 dark:text-zink-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex items-center justify-end p-4 mt-auto border-t border-slate-200 dark:border-zink-500">
+            <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-zink-700">Save Meter Reading</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const waterOpeningBalanceInput = document.getElementById('waterOpeningBalance');
+        const waterClosingBalanceInput = document.getElementById('waterClosingBalance');
+        const waterConsumedUnitsInput = document.getElementById('waterConsumedUnits');
+
+        function calculateWaterConsumed() {
+            const openingBalance = parseFloat(waterOpeningBalanceInput.value) || 0;
+            const closingBalance = parseFloat(waterClosingBalanceInput.value) || 0;
+
+            // Consumed = Opening Balance - Closing Balance
+            // As noted previously, this is based on your specified formula.
+            const consumed = openingBalance - closingBalance;
+
+            waterConsumedUnitsInput.value = consumed.toFixed(2);
+        }
+
+        // Add event listeners for input changes
+        waterOpeningBalanceInput.addEventListener('input', calculateWaterConsumed);
+        waterClosingBalanceInput.addEventListener('input', calculateWaterConsumed);
+
+        // Initial calculation on page load
+        calculateWaterConsumed();
+    });
+</script>

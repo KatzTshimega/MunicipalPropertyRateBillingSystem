@@ -1,0 +1,210 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="flex flex-col w-full h-full bg-white dark:bg-zink-600">
+    <form id="propertyDetailsForm">
+        <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-zink-500">
+            <h5 class="text-16">Property Details</h5>
+            <button data-modal-close="PropertyDetailsModal" class="transition-all duration-200 ease-linear text-slate-500 hover:text-red-500 dark:text-zink-200 dark:hover:text-red-500"><i data-lucide="x" class="size-5"></i></button>
+        </div>
+        <div class="max-h-[calc(theme('height.screen')_-_180px)] p-4 overflow-y-auto">
+            <div class="p-4 rounded-lg bg-gray-50 dark:bg-zink-600 block" id="property-details" role="tabpanel" aria-labelledby="property-details-tab">
+              
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <!-- ERF Number -->
+                    <div>
+                        <label for="erfNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">ERF Number <span class="text-red-500">*</span></label>
+                        <input type="text" id="erfNumber" name="erfNumber" required
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <!-- Street Number -->
+                    <div>
+                        <label for="streetNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Street Number <span class="text-red-500">*</span></label>
+                        <input type="text" id="streetNumber" name="streetNumber" required
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <!-- Township/Suburb -->
+                    <div>
+                        <label for="townshipSuburb" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Township/Suburb <span class="text-red-500">*</span></label>
+                        <input type="text" id="townshipSuburb" name="townshipSuburb" required
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <!-- ID Number (Property ID) -->
+                    <div>
+                        <label for="propertyIDNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Property ID Number <span class="text-red-500">*</span></label>
+                        <input type="text" id="propertyIDNumber" name="propertyIDNumber" required
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <!-- Portion -->
+                    <div>
+                        <label for="portion" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Portion</label>
+                        <input type="text" id="portion" name="portion"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <!-- Area square meter -->
+                    <div>
+                        <label for="areaSqMeter" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Area (sq. meter)</label>
+                        <input type="number" id="areaSqMeter" name="areaSqMeter" step="0.01"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <!-- Latitude -->
+                    <div>
+                        <label for="latitude" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Latitude</label>
+                        <input type="number" id="latitude" name="latitude" step="any"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <!-- Longitude -->
+                    <div>
+                        <label for="longitude" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Longitude</label>
+                        <input type="number" id="longitude" name="longitude" step="any"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <!-- Property Category -->
+                    <div>
+                        <label for="propertyCategory" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Property Category <span class="text-red-500">*</span></label>
+                        <select id="propertyCategory" name="propertyCategory" required
+                                class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                            <option value="">Select Category</option>
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="industrial">Industrial</option>
+                            <option value="agricultural">Agricultural</option>
+                            <option value="vacant">Vacant Land</option>
+                        </select>
+                    </div>
+                    <!-- Multiple Purpose Dropdown -->
+                    <div>
+                        <label for="multiplePurpose" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Multiple Purpose <span class="text-red-500">*</span></label>
+                        <select id="multiplePurpose" name="multiplePurpose" required
+                                class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                            <option value="">Select Option</option>
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <!-- Property Multi-selection Text Area (Conditionally Enabled) -->
+                    <div class="lg:col-span-3">
+                        <label for="multiSelectionText" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Property Multi-selection</label>
+                        <textarea id="multiSelectionText" name="multiSelectionText" rows="3" disabled
+                                  class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100 disabled:bg-slate-100 dark:disabled:bg-zink-800 disabled:text-slate-400 dark:disabled:text-zink-400"></textarea>
+                    </div>
+                </div>
+
+                <h6 class="text-lg font-medium text-gray-800 dark:text-zink-100 mb-3 border-t border-slate-200 dark:border-zink-500 pt-4">Valuation Details</h6>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                    <!-- Site Value -->
+                    <div>
+                        <label for="siteValue" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Site Value (Rand)</label>
+                        <input type="number" id="siteValue" name="siteValue" step="0.01"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <!-- Market Value -->
+                    <div>
+                        <label for="marketValue" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Market Value (Rand)</label>
+                        <input type="number" id="marketValue" name="marketValue" step="0.01"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <!-- Improvements -->
+                    <div>
+                        <label for="improvements" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Improvements (Rand)</label>
+                        <input type="number" id="improvements" name="improvements" step="0.01"
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <!-- Property Value (Calculated) -->
+                    <div>
+                        <label for="propertyValue" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Property Value (Rand)</label>
+                        <input type="text" id="propertyValue" name="propertyValue" readonly
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm bg-slate-100 dark:bg-zink-800 text-gray-700 dark:text-zink-300">
+                    </div>
+                    <!-- Rate Cents in Rand (Uneditable) -->
+                    <div>
+                        <label for="rateCentsInRand" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Rate Cents in Rand</label>
+                        <input type="text" id="rateCentsInRand" name="rateCentsInRand" value="0.005" readonly
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm bg-slate-100 dark:bg-zink-800 text-gray-700 dark:text-zink-300">
+                    </div>
+                    <!-- Annual Rate (Calculated) -->
+                    <div>
+                        <label for="annualRate" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Annual Rate (Rand)</label>
+                        <input type="text" id="annualRate" name="annualRate" readonly
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm bg-slate-100 dark:bg-zink-800 text-gray-700 dark:text-zink-300">
+                    </div>
+                    <!-- Monthly Rate (Calculated) -->
+                    <div>
+                        <label for="monthlyRate" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Monthly Rate (Rand)</label>
+                        <input type="text" id="monthlyRate" name="monthlyRate" readonly
+                               class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm bg-slate-100 dark:bg-zink-800 text-gray-700 dark:text-zink-300">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="flex items-center justify-between p-4 mt-auto border-t border-slate-200 dark:border-zink-500">
+            <!-- Submit Button -->
+            <div class="flex justify-end mt-6">
+                <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-zink-700">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const multiplePurposeSelect = document.getElementById('multiplePurpose');
+        const multiSelectionTextarea = document.getElementById('multiSelectionText');
+
+        // Function to toggle multi-selection textarea
+        function toggleMultiSelectionTextarea() {
+            if (multiplePurposeSelect.value === 'Yes') {
+                multiSelectionTextarea.disabled = false;
+                multiSelectionTextarea.classList.remove('disabled:bg-slate-100', 'dark:disabled:bg-zink-800', 'disabled:text-slate-400', 'dark:disabled:text-zink-400');
+            } else {
+                multiSelectionTextarea.disabled = true;
+                multiSelectionTextarea.value = ''; // Clear content when disabled
+                multiSelectionTextarea.classList.add('disabled:bg-slate-100', 'dark:disabled:bg-zink-800', 'disabled:text-slate-400', 'dark:disabled:text-zink-400');
+            }
+        }
+
+        // Initial call to set state on page load
+        toggleMultiSelectionTextarea();
+        // Add event listener for changes
+        multiplePurposeSelect.addEventListener('change', toggleMultiSelectionTextarea);
+
+        // --- Rate Calculation Logic ---
+        const siteValueInput = document.getElementById('siteValue');
+        const marketValueInput = document.getElementById('marketValue');
+        const improvementsInput = document.getElementById('improvements');
+        const propertyValueInput = document.getElementById('propertyValue');
+        const rateCentsInRandInput = document.getElementById('rateCentsInRand'); // This value is hardcoded for now
+        const annualRateInput = document.getElementById('annualRate');
+        const monthlyRateInput = document.getElementById('monthlyRate');
+
+        function calculateRates() {
+            const siteValue = parseFloat(siteValueInput.value) || 0;
+            const marketValue = parseFloat(marketValueInput.value) || 0;
+            const improvements = parseFloat(improvementsInput.value) || 0;
+            const rateCentsInRand = parseFloat(rateCentsInRandInput.value) || 0;
+
+            const propertyValue = siteValue + marketValue + improvements;
+            const annualRate = propertyValue * rateCentsInRand;
+            const monthlyRate = annualRate / 12;
+
+            propertyValueInput.value = propertyValue.toFixed(2);
+            annualRateInput.value = annualRate.toFixed(2);
+            monthlyRateInput.value = monthlyRate.toFixed(2);
+        }
+
+        // Add event listeners to input fields that affect calculations
+        siteValueInput.addEventListener('input', calculateRates);
+        marketValueInput.addEventListener('input', calculateRates);
+        improvementsInput.addEventListener('input', calculateRates);
+        // If rateCentsInRand could change, add an event listener here too
+        // rateCentsInRandInput.addEventListener('input', calculateRates);
+
+        // Initial calculation on page load
+        calculateRates();
+    });
+</script>
