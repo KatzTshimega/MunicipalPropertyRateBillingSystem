@@ -1,9 +1,387 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
     Layout = "_Layout";
 }
+<div class="card bg-white dark:bg-zink-700 shadow-md rounded-md mt-6">
+    <div class="card-body">
+        <h5 class="mb-4 text-xl font-semibold text-gray-800 dark:text-zink-100">Create New Account</h5>
+
+        <form>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+                <div>
+                    <label for="accountTitle" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Title</label>
+                    <select id="accountTitle" name="accountTitle" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                        <option value="">Select Title</option>
+                        <option value="Mr">Mr.</option>
+                        <option value="Mrs">Mrs.</option>
+                        <option value="Ms">Ms.</option>
+                        <option value="Dr">Dr.</option>
+                        <option value="Prof">Prof.</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="accountName" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Name <span class="text-red-500">*</span></label>
+                    <input type="text" id="accountName" name="accountName" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100" required>
+                </div>
+
+                <div>
+                    <label for="accountSurname" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Surname <span class="text-red-500">*</span></label>
+                    <input type="text" id="accountSurname" name="accountSurname" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100" required>
+                </div>
+
+                <div>
+                    <label for="accountIDNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">ID Number <span class="text-red-500">*</span></label>
+                    <input type="text" id="accountIDNumber" name="accountIDNumber" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100" required>
+                </div>
+
+                <div>
+                    <label for="accountOwnerType" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Owner Type <span class="text-red-500">*</span></label>
+                    <select id="accountOwnerType" name="accountOwnerType" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100" required>
+                        <option value="">Select Owner Type</option>
+                        <option value="individual">Individual</option>
+                        <option value="company">Company</option>
+                        <option value="trust">Trust</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="accountCellNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Cell Number</label>
+                    <input type="tel" id="accountCellNumber" name="accountCellNumber" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                </div>
+
+                <div>
+                    <label for="accountHomeNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Home Number</label>
+                    <input type="tel" id="accountHomeNumber" name="accountHomeNumber" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                </div>
+
+                <div>
+                    <label for="accountWorkNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Work Number</label>
+                    <input type="tel" id="accountWorkNumber" name="accountWorkNumber" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                </div>
+
+                <div>
+                    <label for="accountFaxNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Fax Number</label>
+                    <input type="tel" id="accountFaxNumber" name="accountFaxNumber" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                </div>
+
+                <div>
+                    <label for="accountVatNumber" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">VAT Number</label>
+                    <input type="text" id="accountVatNumber" name="accountVatNumber" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                </div>
+            </div>
+
+            <div class="mb-6 border-t border-slate-200 dark:border-zink-500 pt-4">
+                <h6 class="text-lg font-medium text-gray-800 dark:text-zink-100 mb-3">Physical Address</h6>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div>
+                        <label for="physicalAddress1" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 1</label>
+                        <input type="text" id="physicalAddress1" name="physicalAddress1" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="physicalAddress2" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 2</label>
+                        <input type="text" id="physicalAddress2" name="physicalAddress2" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="physicalAddress3" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 3</label>
+                        <input type="text" id="physicalAddress3" name="physicalAddress3" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="physicalSuburbTownship" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Suburb/Township</label>
+                        <input type="text" id="physicalSuburbTownship" name="physicalSuburbTownship" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="physicalCity" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">City</label>
+                        <input type="text" id="physicalCity" name="physicalCity" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="physicalProvince" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Province</label>
+                        <input type="text" id="physicalProvince" name="physicalProvince" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="physicalPostalCode" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Postal Code</label>
+                        <input type="text" id="physicalPostalCode" name="physicalPostalCode" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6 border-t border-slate-200 dark:border-zink-500 pt-4">
+                <h6 class="text-lg font-medium text-gray-800 dark:text-zink-100 mb-3">Postal Address</h6>
+                <div class="flex items-center gap-2 mb-4">
+                    <input id="sameAsPhysical" class="border rounded-sm appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500 dark:checked:bg-custom-500 dark:checked:border-custom-500" type="checkbox">
+                    <label for="sameAsPhysical" class="align-middle text-sm font-medium text-gray-700 dark:text-zink-200">Same As Physical Address</label>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" id="postalAddressFields">
+                    <div>
+                        <label for="postalAddress1" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 1</label>
+                        <input type="text" id="postalAddress1" name="postalAddress1" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="postalAddress2" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 2</label>
+                        <input type="text" id="postalAddress2" name="postalAddress2" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="postalAddress3" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Line Address 3</label>
+                        <input type="text" id="postalAddress3" name="postalAddress3" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="postalSuburbTownship" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Suburb/Township</label>
+                        <input type="text" id="postalSuburbTownship" name="postalSuburbTownship" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="postalCity" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">City</label>
+                        <input type="text" id="postalCity" name="postalCity" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="postalProvince" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Province</label>
+                        <input type="text" id="postalProvince" name="postalProvince" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                    <div>
+                        <label for="postalPostalCode" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Postal Code</label>
+                        <input type="text" id="postalPostalCode" name="postalPostalCode" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-end mt-6">
+                <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-zink-700">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
 
 
-CreateNewAccount
+
+<div class="card bg-white dark:bg-zink-700 shadow-md rounded-md mt-6">
+
+    <div class="card-body">
+        <h5 class="mb-4 text-xl font-semibold text-gray-800 dark:text-zink-100">Select Details to View/Edit</h5>
+
+        <div class="flex items-center gap-4">
+            <div class="w-1/2">
+                <label for="detailSelection" class="sr-only">Select Detail</label>
+                <select id="detailSelection" name="detailSelection" class="w-full px-3 py-2 border border-slate-200 dark:border-zink-500 rounded-md shadow-sm focus:outline-none focus:ring-custom-500 focus:border-custom-500 dark:bg-zink-700 dark:text-zink-100">
+                    <option value="">-- Select an option --</option>
+                    <option value="PropertyDetails">Property Details</option>
+                    <option value="AccountDetails">Account Details</option>
+                    <option value="ElectricityReadings">Electricity Readings</option>
+                    <option value="WaterReadings">Water Readings</option>
+                </select>
+            </div>
+
+
+            <button data-modal-target="PropertyDetailsModal" type="button" style="display:none" class="text-white transition-all duration-200 ease-linear btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:focus:ring-custom-400/20">
+                Property Details
+            </button>
+            <button data-modal-target="ElectricityReadingsModal" type="button" style="display:none" class="text-white transition-all duration-200 ease-linear btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:focus:ring-custom-400/20">
+                Electricity Readings
+            </button>
+            <button data-modal-target="WaterReadingsModal" type="button" style="display:none" class="text-white transition-all duration-200 ease-linear btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:focus:ring-custom-400/20">
+                Water Readings
+            </button>
+            <button data-modal-target="AccountDetailsModal" type="button" style="display:none" class="text-white transition-all duration-200 ease-linear btn bg-custom-500 border-custom-500 hover:text-white hover:bg-custom-600 hover:border-custom-600 focus:text-white focus:bg-custom-600 focus:border-custom-600 focus:ring focus:ring-custom-100 active:text-white active:bg-custom-600 active:border-custom-600 active:ring active:ring-custom-100 dark:focus:ring-custom-400/20">
+                Account Details
+            </button>
+            <div id="PropertyDetailsModal" modal-center="" class="fixed flex flex-col hidden transition-all duration-300 ease-in-out left-2/4 z-drawer -translate-x-2/4 -translate-y-2/4 show">
+                <div class="w-screen lg:w-[55rem] bg-white shadow rounded-md dark:bg-zink-600 flex flex-col h-full">
+                    <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-zink-500">
+                        <h5 class="text-16">Property Details</h5>
+                        <button data-modal-close="PropertyDetailsModal" class="transition-all duration-200 ease-linear text-slate-500 hover:text-red-500 dark:text-zink-200 dark:hover:text-red-500"><i data-lucide="x" class="size-5"></i></button>
+                    </div>
+                    <div class="max-h-[calc(theme('height.screen')_-_180px)] p-4 overflow-y-auto">
+                        <h5 class="mb-3 text-16">Modal Content</h5>
+                        <p class="text-slate-500 dark:text-zink-200">
+                            They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between p-4 mt-auto border-t border-slate-200 dark:border-zink-500">
+                        <h5 class="text-16">Modal Footer</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div id="AccountDetailsModal" modal-center="" class="fixed flex flex-col hidden transition-all duration-300 ease-in-out left-2/4 z-drawer -translate-x-2/4 -translate-y-2/4 show">
+                <div class="w-screen lg:w-[55rem] bg-white shadow rounded-md dark:bg-zink-600 flex flex-col h-full">
+                    <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-zink-500">
+                        <h5 class="text-16">Modal Heading</h5>
+                        <button data-modal-close="AccountDetailsModal" class="transition-all duration-200 ease-linear text-slate-500 hover:text-red-500 dark:text-zink-200 dark:hover:text-red-500"><i data-lucide="x" class="size-5"></i></button>
+                    </div>
+                    <div class="max-h-[calc(theme('height.screen')_-_180px)] p-4 overflow-y-auto">
+                        <h5 class="mb-3 text-16">Account Details</h5>
+                        <p class="text-slate-500 dark:text-zink-200">
+                            They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between p-4 mt-auto border-t border-slate-200 dark:border-zink-500">
+                        <h5 class="text-16">Modal Footer</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div id="ElectricityReadingsModal" modal-center="" class="fixed flex flex-col hidden transition-all duration-300 ease-in-out left-2/4 z-drawer -translate-x-2/4 -translate-y-2/4 show">
+                <div class="w-screen lg:w-[55rem] bg-white shadow rounded-md dark:bg-zink-600 flex flex-col h-full">
+                    <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-zink-500">
+                        <h5 class="text-16">Modal Heading</h5>
+                        <button data-modal-close="ElectricityReadingsModal" class="transition-all duration-200 ease-linear text-slate-500 hover:text-red-500 dark:text-zink-200 dark:hover:text-red-500"><i data-lucide="x" class="size-5"></i></button>
+                    </div>
+                    <div class="max-h-[calc(theme('height.screen')_-_180px)] p-4 overflow-y-auto">
+                        <h5 class="mb-3 text-16">Electricity Readings</h5>
+                        <p class="text-slate-500 dark:text-zink-200">
+                            They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between p-4 mt-auto border-t border-slate-200 dark:border-zink-500">
+                        <h5 class="text-16">Modal Footer</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div id="WaterReadingsModal" modal-center="" class="fixed flex flex-col hidden transition-all duration-300 ease-in-out left-2/4 z-drawer -translate-x-2/4 -translate-y-2/4 show">
+                <div class="w-screen lg:w-[55rem] bg-white shadow rounded-md dark:bg-zink-600 flex flex-col h-full">
+                    <div class="flex items-center justify-between p-4 border-b border-slate-200 dark:border-zink-500">
+                        <h5 class="text-16">Water Readings</h5>
+                        <button data-modal-close="WaterReadingsModal" class="transition-all duration-200 ease-linear text-slate-500 hover:text-red-500 dark:text-zink-200 dark:hover:text-red-500"><i data-lucide="x" class="size-5"></i></button>
+                    </div>
+                    <div class="max-h-[calc(theme('height.screen')_-_180px)] p-4 overflow-y-auto">
+                        <h5 class="mb-3 text-16">Modal Content</h5>
+                        <p class="text-slate-500 dark:text-zink-200">
+                            They all have something to say beyond the words on the page. They can come across as casual or neutral, exotic or graphic
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between p-4 mt-auto border-t border-slate-200 dark:border-zink-500">
+                        <h5 class="text-16">Modal Footer</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="card bg-white dark:bg-zink-700 shadow-md rounded-md mt-6">
+
+    <div class="card-body">
+        <h6 class="mb-4 text-15">Arrow Nav Tabs</h6>
+        <div>
+            <ul class="flex flex-wrap w-full text-sm font-medium text-center nav-tabs">
+                <li class="group grow active">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="propertyTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Property Details
+                    </a>
+                </li>
+                <li class="group grow">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="accountTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Account Details
+                    </a>
+                </li>
+                <li class="group grow">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="electricityTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Electricity
+                    </a>
+                </li>
+                <li class="group grow">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="waterTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Water
+                    </a>
+                </li>
+                <li class="group grow">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="supplementaryTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Supplementary Charges
+                    </a>
+                </li>
+                <li class="group grow">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="statementTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Statement History
+                    </a>
+                </li>
+            </ul>
+
+            <div class="mt-5 tab-content">
+                <div class="block tab-pane" id="propertyTab">
+                    <p class="mb-0">
+                        Content for Property Details tab.
+                    </p>
+                </div>
+                <div class="hidden tab-pane" id="accountTab">
+                    <p class="mb-0">
+                        Content for Account Details tab.
+                    </p>
+                </div>
+                <div class="hidden tab-pane" id="electricityTab">
+                    <p class="mb-0">
+                        Content for Electricity tab.
+                    </p>
+                </div>
+                <div class="hidden tab-pane" id="waterTab">
+                    <p class="mb-0">
+                        Content for Water tab.
+                    </p>
+                </div>
+                <div class="hidden tab-pane" id="supplementaryTab">
+                    <p class="mb-0">
+                        Content for Supplementary Charges tab.
+                    </p>
+                </div>
+                <div class="hidden tab-pane" id="statementTab">
+                    <p class="mb-0">
+                        Content for Statement History tab.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--end card-->
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const sameAsPhysicalCheckbox = document.getElementById('sameAsPhysical');
+        const postalAddressFields = document.getElementById('postalAddressFields');
+        const physicalFields = [
+            'physicalAddress1', 'physicalAddress2', 'physicalAddress3',
+            'physicalSuburbTownship', 'physicalCity', 'physicalProvince', 'physicalPostalCode'
+        ];
+        const postalFields = [
+            'postalAddress1', 'postalAddress2', 'postalAddress3',
+            'postalSuburbTownship', 'postalCity', 'postalProvince', 'postalPostalCode'
+        ];
+
+        sameAsPhysicalCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                // Copy values from physical to postal
+                physicalFields.forEach((fieldId, index) => {
+                    document.getElementById(postalFields[index]).value = document.getElementById(fieldId).value;
+                    document.getElementById(postalFields[index]).readOnly = true;
+                });
+                postalAddressFields.classList.add('opacity-50', 'pointer-events-none');
+            } else {
+                // Clear postal fields and enable
+                postalFields.forEach(fieldId => {
+                    document.getElementById(fieldId).value = '';
+                    document.getElementById(fieldId).readOnly = false;
+                });
+                postalAddressFields.classList.remove('opacity-50', 'pointer-events-none');
+            }
+        });
+    });
+
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const select = document.getElementById("detailSelection");
+        const buttons = document.querySelectorAll("button[data-modal-target]");
+
+        select.addEventListener("change", function () {
+            const selectedValue = select.value;
+
+            buttons.forEach(button => {
+                if (button.getAttribute("data-modal-target") === selectedValue + "Modal") {
+                    button.style.display = "inline-block";
+                } else {
+                    button.style.display = "none";
+                }
+            });
+        });
+    });
+</script>

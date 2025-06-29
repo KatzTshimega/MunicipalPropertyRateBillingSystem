@@ -2,6 +2,899 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    Layout = "_Layout";
 }
 
-SystemRights
+<!-- Card Section 1: Position Dropdown -->
+<div class="card bg-white dark:bg-zink-700 shadow-md rounded-md mt-6">
+    <div class="card-header border-b border-slate-200 dark:border-zink-500 p-4">
+        <h5 class="text-lg font-semibold text-gray-800 dark:text-zink-100">Select Position</h5>
+    </div>
+    <div class="card-body p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-end">
+            <div>
+                <label for="positionSelect" class="block text-sm font-medium text-gray-700 dark:text-zink-200 mb-1">Position <span class="text-red-500">*</span></label>
+                <select id="positionSelect" name="positionSelect" required
+                        class="form-select w-full px-3 py-2 border border-gray-300 dark:border-zink-500 rounded-md
+                                       bg-white dark:bg-zink-600 text-gray-900 dark:text-zink-100
+                                       focus:ring-custom-500 focus:border-custom-500
+                                       transition-all duration-150 ease-in-out">
+                    <option value="">Select a Position</option>
+                    <option value="admin">Administrator</option>
+                    <option value="manager">Manager</option>
+                    <option value="supervisor">Supervisor</option>
+                    <option value="employee">Employee</option>
+                    <option value="guest">Guest User</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="card bg-white dark:bg-zink-700 shadow-md rounded-md mt-6">
+    <div class="card-body">
+        <h6 class="mb-4 text-15">Arrow Nav Tabs</h6>
+        <div>
+            <ul class="flex flex-wrap w-full text-sm font-medium text-center nav-tabs">
+                <li class="group grow active">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="accountsTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Accounts
+                    </a>
+                </li>
+                <li class="group grow">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="paymentsTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Payments
+                    </a>
+                </li>
+                <li class="group grow">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="readingsTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Readings
+                    </a>
+                </li>
+                <li class="group grow">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="settingsTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Settings
+                    </a>
+                </li>
+                <li class="group grow">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="enquiriesTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Enquiries
+                    </a>
+                </li>
+                <li class="group grow">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="reportsTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        Reports
+                    </a>
+                </li>
+                <li class="group grow">
+                    <a href="javascript:void(0);" data-tab-toggle="" data-target="userAdminTab" class="relative inline-block px-4 w-full py-2 text-base transition-all duration-300 ease-linear rounded-md text-slate-500 dark:text-zink-200 border border-transparent group-[.active]:bg-custom-500 group-[.active]:text-white hover:text-custom-500 active:text-custom-500 dark:group-[.active]:text-white dark:hover:text-custom-500 dark:active:text-custom-500 -mb-[1px] before:absolute before:-bottom-1.5 before:-rotate-[135deg] before:left-2/4 before:-translate-x-2/4 before:bg-transparent group-[.active]:before:bg-custom-500 before:h-3 before:w-3">
+                        User Admin
+                    </a>
+                </li>
+            </ul>
+
+            <div class="mt-5 tab-content">
+                <div class="block tab-pane" id="accountsTab">
+                    <p class="mb-0">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="mb-4 text-xl font-semibold">Accounts Tab - System Rights</h5>
+
+                                <div class="mb-6">
+                                    <h6 class="mb-3 text-lg font-medium">Search Account</h6>
+                                    <div class="flex flex-col gap-2">
+                                        <div class="flex items-center gap-2">
+                                            <input id="searchAccountAll" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="searchCustomer" value="all_access" checked>
+                                            <label for="searchAccountAll" class="align-middle">All Access</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="searchAccountView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="searchCustomer" value="view">
+                                            <label for="searchAccountView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="searchAccountNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="searchCustomer" value="no_access">
+                                            <label for="searchAccountNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="mb-6">
+                                    <h6 class="mb-3 text-lg font-medium">Create New Account</h6>
+                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Personal Details:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createPersonalDetailsCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createPersonalDetails" value="create" checked>
+                                                <label for="createPersonalDetailsCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createPersonalDetailsView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createPersonalDetails" value="view">
+                                                <label for="createPersonalDetailsView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createPersonalDetailsNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createPersonalDetails" value="no_access">
+                                                <label for="createPersonalDetailsNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Account Details:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createAccountDetailsCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createAccountDetails" value="create" checked>
+                                                <label for="createAccountDetailsCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createAccountDetailsView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createAccountDetails" value="view">
+                                                <label for="createAccountDetailsView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createAccountDetailsNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createAccountDetails" value="no_access">
+                                                <label for="createAccountDetailsNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Property Details:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createPropertyDetailsCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createPropertyDetails" value="create" checked>
+                                                <label for="createPropertyDetailsCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createPropertyDetailsView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createPropertyDetails" value="view">
+                                                <label for="createPropertyDetailsView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createPropertyDetailsNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createPropertyDetails" value="no_access">
+                                                <label for="createPropertyDetailsNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Electricity Readings:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createElectricityReadingsCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createElectricityReadings" value="create" checked>
+                                                <label for="createElectricityReadingsCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createElectricityReadingsView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createElectricityReadings" value="view">
+                                                <label for="createElectricityReadingsView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createElectricityReadingsNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createElectricityReadings" value="no_access">
+                                                <label for="createElectricityReadingsNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Water Readings:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createWaterReadingsCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createWaterReadings" value="create" checked>
+                                                <label for="createWaterReadingsCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createWaterReadingsView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createWaterReadings" value="view">
+                                                <label for="createWaterReadingsView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createWaterReadingsNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createWaterReadings" value="no_access">
+                                                <label for="createWaterReadingsNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Refuse | Sewage:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createRefuseSewageCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createRefuseSewage" value="create" checked>
+                                                <label for="createRefuseSewageCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createRefuseSewageView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createRefuseSewage" value="view">
+                                                <label for="createRefuseSewageView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createRefuseSewageNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createRefuseSewage" value="no_access">
+                                                <label for="createRefuseSewageNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Statement History:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createStatementHistoryCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createStatementHistory" value="create" checked>
+                                                <label for="createStatementHistoryCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createStatementHistoryView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createStatementHistory" value="view">
+                                                <label for="createStatementHistoryView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="createStatementHistoryNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="createStatementHistory" value="no_access">
+                                                <label for="createStatementHistoryNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="mb-6">
+                                    <h6 class="mb-3 text-lg font-medium">Account Manager</h6>
+                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Personal Details:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerPersonalDetailsUpdate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerPersonalDetails" value="update" checked>
+                                                <label for="managerPersonalDetailsUpdate" class="align-middle">Update</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerPersonalDetailsView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerPersonalDetails" value="view">
+                                                <label for="managerPersonalDetailsView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerPersonalDetailsNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerPersonalDetails" value="no_access">
+                                                <label for="managerPersonalDetailsNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Account Details:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerAccountDetailsUpdate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerAccountDetails" value="update" checked>
+                                                <label for="managerAccountDetailsUpdate" class="align-middle">Update</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerAccountDetailsView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerAccountDetails" value="view">
+                                                <label for="managerAccountDetailsView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerAccountDetailsNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerAccountDetails" value="no_access">
+                                                <label for="managerAccountDetailsNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Property Details:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerPropertyDetailsUpdate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerPropertyDetails" value="update" checked>
+                                                <label for="managerPropertyDetailsUpdate" class="align-middle">Update</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerPropertyDetailsView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerPropertyDetails" value="view">
+                                                <label for="managerPropertyDetailsView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerPropertyDetailsNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerPropertyDetails" value="no_access">
+                                                <label for="managerPropertyDetailsNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Electricity Readings:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerElectricityReadingsUpdate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerElectricityReadings" value="update" checked>
+                                                <label for="managerElectricityReadingsUpdate" class="align-middle">Update</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerElectricityReadingsView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerElectricityReadings" value="view">
+                                                <label for="managerElectricityReadingsView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerElectricityReadingsNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerElectricityReadings" value="no_access">
+                                                <label for="managerElectricityReadingsNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Water Readings:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerWaterReadingsUpdate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerWaterReadings" value="update" checked>
+                                                <label for="managerWaterReadingsUpdate" class="align-middle">Update</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerWaterReadingsView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerWaterReadings" value="view">
+                                                <label for="managerWaterReadingsView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerWaterReadingsNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerWaterReadings" value="no_access">
+                                                <label for="managerWaterReadingsNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Refuse | Sewage:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerRefuseSewageUpdate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerRefuseSewage" value="update" checked>
+                                                <label for="managerRefuseSewageUpdate" class="align-middle">Update</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerRefuseSewageView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerRefuseSewage" value="view">
+                                                <label for="managerRefuseSewageView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="managerRefuseSewageNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="managerRefuseSewage" value="no_access">
+                                                <label for="managerRefuseSewageNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="flex justify-end gap-2 mt-6">
+                                    <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
+                                    <button type="button" class="px-4 py-2 text-slate-700 bg-slate-200 rounded-md hover:bg-slate-300 dark:bg-zink-600 dark:text-zink-200 dark:hover:bg-zink-700">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </p>
+                </div>
+                <div class="hidden tab-pane" id="paymentsTab">
+                    <p class="mb-0">
+                        @* Content for Payments tab. *@
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="mb-4 text-xl font-semibold">Payments Tab - System Rights</h5>
+
+                                <div class="mb-6">
+                                    <h6 class="mb-3 text-lg font-medium">Account Payment</h6>
+                                    <div class="flex flex-col gap-2">
+                                        <div class="flex items-center gap-2">
+                                            <input id="paymentCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="accountPayment" value="create" checked>
+                                            <label for="paymentCreate" class="align-middle">Create</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="paymentView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="accountPayment" value="view">
+                                            <label for="paymentView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="paymentNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="accountPayment" value="no_access">
+                                            <label for="paymentNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="mb-6">
+                                    <h6 class="mb-3 text-lg font-medium">Account Reconciliation</h6>
+                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Debit Note:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reconDebitCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reconDebitNote" value="create" checked>
+                                                <label for="reconDebitCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reconDebitView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reconDebitNote" value="view">
+                                                <label for="reconDebitView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reconDebitNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reconDebitNote" value="no_access">
+                                                <label for="reconDebitNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Credit Note:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reconCreditCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reconCreditNote" value="create" checked>
+                                                <label for="reconCreditCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reconCreditView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reconCreditNote" value="view">
+                                                <label for="reconCreditView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reconCreditNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reconCreditNote" value="no_access">
+                                                <label for="reconCreditNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="mb-6">
+                                    <h6 class="mb-3 text-lg font-medium">Credit Note Approval</h6>
+                                    <div class="flex flex-col gap-2">
+                                        <p class="font-medium">Credit Note:</p>
+                                        <div class="flex items-center gap-2">
+                                            <input id="creditApproveUpdate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="creditNoteApproval" value="update" checked>
+                                            <label for="creditApproveUpdate" class="align-middle">Update</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="creditApproveView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="creditNoteApproval" value="view">
+                                            <label for="creditApproveView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="creditApproveNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="creditNoteApproval" value="no_access">
+                                            <label for="creditApproveNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="mb-6">
+                                    <h6 class="mb-3 text-lg font-medium">Debit Note Approval</h6>
+                                    <div class="flex flex-col gap-2">
+                                        <p class="font-medium">Debit Note:</p>
+                                        <div class="flex items-center gap-2">
+                                            <input id="debitApproveUpdate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="debitNoteApproval" value="update" checked>
+                                            <label for="debitApproveUpdate" class="align-middle">Update</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="debitApproveView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="debitNoteApproval" value="view">
+                                            <label for="debitApproveView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="debitApproveNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="debitNoteApproval" value="no_access">
+                                            <label for="debitApproveNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="flex justify-end gap-2 mt-6">
+                                    <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
+                                    <button type="button" class="px-4 py-2 text-slate-700 bg-slate-200 rounded-md hover:bg-slate-300 dark:bg-zink-600 dark:text-zink-200 dark:hover:bg-zink-700">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </p>
+                </div>
+                <div class="hidden tab-pane" id="readingsTab">
+                    <p class="mb-0">
+                        Content for Readings tab.
+                    </p>
+                </div>
+                <div class="hidden tab-pane" id="settingsTab">
+                    <p class="mb-0">
+                        Content for Settings tab.
+                    </p>
+                </div>
+                <div class="hidden tab-pane" id="enquiriesTab">
+                    <p class="mb-0">
+                       @*  Content for Enquiries tab. *@
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="mb-4 text-xl font-semibold">Enquiries Tab - System Rights</h5>
+
+                                <div class="mb-6">
+                                    <h6 class="mb-3 text-lg font-medium">Enquiries</h6>
+                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Dispute:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="disputeCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="disputeAccess" value="create">
+                                                <label for="disputeCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="disputeView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="disputeAccess" value="view" checked>
+                                                <label for="disputeView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="disputeNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="disputeAccess" value="no_access">
+                                                <label for="disputeNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                            <div class="flex items-center gap-2 mt-2">
+                                                <input id="disputeProgress" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500 dark:checked:bg-custom-500 dark:checked:border-custom-500" type="checkbox" value="progress">
+                                                <label for="disputeProgress" class="align-middle">Progress</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Complaint:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="complaintCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="complaintAccess" value="create">
+                                                <label for="complaintCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="complaintView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="complaintAccess" value="view" checked>
+                                                <label for="complaintView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="complaintNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="complaintAccess" value="no_access">
+                                                <label for="complaintNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                            <div class="flex items-center gap-2 mt-2">
+                                                <input id="complaintProgress" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500 dark:checked:bg-custom-500 dark:checked:border-custom-500" type="checkbox" value="progress">
+                                                <label for="complaintProgress" class="align-middle">Progress</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Complement:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="complementCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="complementAccess" value="create">
+                                                <label for="complementCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="complementView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="complementAccess" value="view" checked>
+                                                <label for="complementView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="complementNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="complementAccess" value="no_access">
+                                                <label for="complementNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                            <div class="flex items-center gap-2 mt-2">
+                                                <input id="complementProgress" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500 dark:checked:bg-custom-500 dark:checked:border-custom-500" type="checkbox" value="progress">
+                                                <label for="complementProgress" class="align-middle">Progress</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">General Enquiry:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="generalEnquiryCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="generalEnquiryAccess" value="create">
+                                                <label for="generalEnquiryCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="generalEnquiryView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="generalEnquiryAccess" value="view" checked>
+                                                <label for="generalEnquiryView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="generalEnquiryNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="generalEnquiryAccess" value="no_access">
+                                                <label for="generalEnquiryNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                            <div class="flex items-center gap-2 mt-2">
+                                                <input id="generalEnquiryProgress" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500 dark:checked:bg-custom-500 dark:checked:border-custom-500" type="checkbox" value="progress">
+                                                <label for="generalEnquiryProgress" class="align-middle">Progress</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="flex justify-end gap-2 mt-6">
+                                    <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
+                                    <button type="button" class="px-4 py-2 text-slate-700 bg-slate-200 rounded-md hover:bg-slate-300 dark:bg-zink-600 dark:text-zink-200 dark:hover:bg-zink-700">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </p>
+                </div>
+                <div class="hidden tab-pane" id="reportsTab">
+                    <p class="mb-0">
+                       @*  Content for Reports tab. *@
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="mb-4 text-xl font-semibold">Reports Tab - System Rights</h5>
+
+                                <div class="mb-6">
+                                    <h6 class="mb-3 text-lg font-medium">Reports</h6>
+                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Payment Report:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportPaymentCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportPayment" value="create" checked>
+                                                <label for="reportPaymentCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportPaymentView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportPayment" value="view">
+                                                <label for="reportPaymentView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportPaymentNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportPayment" value="no_access">
+                                                <label for="reportPaymentNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Unbilled Report:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportUnbilledCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportUnbilled" value="create" checked>
+                                                <label for="reportUnbilledCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportUnbilledView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportUnbilled" value="view">
+                                                <label for="reportUnbilledView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportUnbilledNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportUnbilled" value="no_access">
+                                                <label for="reportUnbilledNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Billed Report:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportBilledCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportBilled" value="create" checked>
+                                                <label for="reportBilledCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportBilledView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportBilled" value="view">
+                                                <label for="reportBilledView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportBilledNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportBilled" value="no_access">
+                                                <label for="reportBilledNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Unpaid Report:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportUnpaidCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportUnpaid" value="create" checked>
+                                                <label for="reportUnpaidCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportUnpaidView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportUnpaid" value="view">
+                                                <label for="reportUnpaidView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportUnpaidNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportUnpaid" value="no_access">
+                                                <label for="reportUnpaidNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Paid Report:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportPaidCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportPaid" value="create" checked>
+                                                <label for="reportPaidCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportPaidView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportPaid" value="view">
+                                                <label for="reportPaidView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportPaidNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportPaid" value="no_access">
+                                                <label for="reportPaidNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Account Reconciliation Report:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportAccountReconCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportAccountRecon" value="create" checked>
+                                                <label for="reportAccountReconCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportAccountReconView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportAccountRecon" value="view">
+                                                <label for="reportAccountReconView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportAccountReconNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportAccountRecon" value="no_access">
+                                                <label for="reportAccountReconNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Customer Report:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportCustomerCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportCustomer" value="create" checked>
+                                                <label for="reportCustomerCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportCustomerView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportCustomer" value="view">
+                                                <label for="reportCustomerView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportCustomerNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportCustomer" value="no_access">
+                                                <label for="reportCustomerNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Property Report:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportPropertyCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportProperty" value="create" checked>
+                                                <label for="reportPropertyCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportPropertyView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportProperty" value="view">
+                                                <label for="reportPropertyView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportPropertyNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportProperty" value="no_access">
+                                                <label for="reportPropertyNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="flex flex-col gap-2">
+                                            <p class="font-medium">Oversight Report:</p>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportOversightCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportOversight" value="create" checked>
+                                                <label for="reportOversightCreate" class="align-middle">Create</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportOversightView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportOversight" value="view">
+                                                <label for="reportOversightView" class="align-middle">View</label>
+                                            </div>
+                                            <div class="flex items-center gap-2">
+                                                <input id="reportOversightNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="reportOversight" value="no_access">
+                                                <label for="reportOversightNoAccess" class="align-middle">No Access</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="flex justify-end gap-2 mt-6">
+                                    <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
+                                    <button type="button" class="px-4 py-2 text-slate-700 bg-slate-200 rounded-md hover:bg-slate-300 dark:bg-zink-600 dark:text-zink-200 dark:hover:bg-zink-700">Close</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </p>
+                </div>
+                <div class="hidden tab-pane" id="userAdminTab">
+                    <p class="mb-0">
+                       @*  Content for User Admin tab. *@
+                        <div class="p-4 rounded-lg bg-gray-50 dark:bg-zink-600 block" id="userAdminContent" role="tabpanel" aria-labelledby="userAdmin-tab">
+                            <h5 class="mb-4 text-xl font-semibold text-gray-800 dark:text-zink-100">User Admin Tab - System Rights</h5>
+
+                            <div class="mb-6">
+                                <h6 class="mb-3 text-lg font-medium text-gray-800 dark:text-zink-100">User Admin</h6>
+                                <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                    <div class="flex flex-col gap-2">
+                                        <p class="font-medium">Payment:</p>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminPaymentCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminPayment" value="create" checked>
+                                            <label for="userAdminPaymentCreate" class="align-middle">Create</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminPaymentView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminPayment" value="view">
+                                            <label for="userAdminPaymentView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminPaymentNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminPayment" value="no_access">
+                                            <label for="userAdminPaymentNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <p class="font-medium">Unbilled Report:</p>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminUnbilledCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminUnbilled" value="create" checked>
+                                            <label for="userAdminUnbilledCreate" class="align-middle">Create</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminUnbilledView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminUnbilled" value="view">
+                                            <label for="userAdminUnbilledView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminUnbilledNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminUnbilled" value="no_access">
+                                            <label for="userAdminUnbilledNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <p class="font-medium">Billed Report:</p>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminBilledCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminBilled" value="create" checked>
+                                            <label for="userAdminBilledCreate" class="align-middle">Create</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminBilledView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminBilled" value="view">
+                                            <label for="userAdminBilledView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminBilledNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminBilled" value="no_access">
+                                            <label for="userAdminBilledNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <p class="font-medium">Unpaid Report:</p>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminUnpaidCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminUnpaid" value="create" checked>
+                                            <label for="userAdminUnpaidCreate" class="align-middle">Create</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminUnpaidView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminUnpaid" value="view">
+                                            <label for="userAdminUnpaidView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminUnpaidNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminUnpaid" value="no_access">
+                                            <label for="userAdminUnpaidNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <p class="font-medium">Paid Report:</p>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminPaidCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminPaid" value="create" checked>
+                                            <label for="userAdminPaidCreate" class="align-middle">Create</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminPaidView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminPaid" value="view">
+                                            <label for="userAdminPaidView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminPaidNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminPaid" value="no_access">
+                                            <label for="userAdminPaidNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <p class="font-medium">Account Reconciliation Report:</p>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminAccountReconCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminAccountRecon" value="create" checked>
+                                            <label for="userAdminAccountReconCreate" class="align-middle">Create</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminAccountReconView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminAccountRecon" value="view">
+                                            <label for="userAdminAccountReconView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminAccountReconNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminAccountRecon" value="no_access">
+                                            <label for="userAdminAccountReconNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <p class="font-medium">Customer Report:</p>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminCustomerCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminCustomer" value="create" checked>
+                                            <label for="userAdminCustomerCreate" class="align-middle">Create</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminCustomerView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminCustomer" value="view">
+                                            <label for="userAdminCustomerView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminCustomerNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminCustomer" value="no_access">
+                                            <label for="userAdminCustomerNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <p class="font-medium">Property Report:</p>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminPropertyCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminProperty" value="create" checked>
+                                            <label for="userAdminPropertyCreate" class="align-middle">Create</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminPropertyView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminProperty" value="view">
+                                            <label for="userAdminPropertyView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminPropertyNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminProperty" value="no_access">
+                                            <label for="userAdminPropertyNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col gap-2">
+                                        <p class="font-medium">Oversight Report:</p>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminOversightCreate" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminOversight" value="create" checked>
+                                            <label for="userAdminOversightCreate" class="align-middle">Create</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminOversightView" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminOversight" value="view">
+                                            <label for="userAdminOversightView" class="align-middle">View</label>
+                                        </div>
+                                        <div class="flex items-center gap-2">
+                                            <input id="userAdminOversightNoAccess" class="border rounded-full appearance-none cursor-pointer size-4 bg-slate-100 border-slate-200 dark:bg-zink-600 dark:border-zink-500 checked:bg-custom-500 checked:border-custom-500" type="radio" name="userAdminOversight" value="no_access">
+                                            <label for="userAdminOversightNoAccess" class="align-middle">No Access</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <div class="flex justify-end gap-2 mt-6">
+                                <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-md hover:bg-blue-600">Submit</button>
+                                <button type="button" class="px-4 py-2 text-slate-700 bg-slate-200 rounded-md hover:bg-slate-300 dark:bg-zink-600 dark:text-zink-200 dark:hover:bg-zink-700">Close</button>
+                            </div>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--end card-->
+
